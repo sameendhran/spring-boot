@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean definition for 'alien' with constructor-based dependency injection -->
+    <bean id="alien" class="com.sam.spring1.Alien" autowire="byType">
+    <!--property name="comp" ref="desk"></!property-->
+       </bean>
+    <!-- Bean definition for 'lap1', a Laptop object to be injected into the Alien bean -->
+    <bean id="comp1" class="com.sam.spring1.Laptop" primary="true">
+    </bean>
+    
+    <bean id="comp" class="com.sam.spring1.Desktop" >
+    </bean>
+
+</beans>
