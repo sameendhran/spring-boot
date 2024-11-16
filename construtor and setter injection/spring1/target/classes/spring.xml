@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean definition for 'alien' with constructor-based dependency injection -->
+    <bean id="alien" class="com.sam.spring1.Alien">
+        <!-- Injecting 'lap1' bean into the 'lap' property of the Alien bean -->
+        <property name="lap" ref="lap1"></property>
+       <constructor-arg ref="lap1"></constructor-arg>
+        
+        <!--cstructor injection: paing '25' as the value for 'age' and '35' as the value for 'salary' -->
+       <!-- <constructor-arg index="0" value="25" /> <! 25 for age >
+        <constructor-arg index="1" value="35" /> < 35 for salary -->
+    </bean>
+    
+    <!-- Bean definition for 'lap1', a Laptop object to be injected into the Alien bean -->
+    <bean id="lap1" class="com.sam.spring1.Laptop">
+    </bean>
+
+</beans>
